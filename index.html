@@ -1,0 +1,608 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    body, html {
+        margin: 0;
+        background: #ccc;
+        font-family: monospace, "微軟正黑體", sans-serif;
+        letter-spacing: 0.65px;
+        font-size: 15px;
+        color: #555;
+        cursor: default;
+    }
+    .resume {
+        width: 900px;
+        background: #fbfbfb;
+        margin: 20px auto;
+        border: 1px solid #bbb;
+        box-shadow: 0 0 20px -3px #bbb;
+        position: relative;
+    }
+
+        .resume .profile {
+            width: 240px;
+            background: #78947e;
+            padding: 30px 15px 5px 15px;
+            position: relative;
+            z-index: 2;
+            float: left;
+        }
+            .resume .profile .photo {
+                width: 56%;
+                overflow: hidden;
+                border-radius: 50%;
+                height: 144px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 20px;
+                text-align: center;
+                background: #fefefc;
+            }
+
+
+        .resume .profile2 {
+            width: 658px;
+            float: right;
+        }
+            .resume .profile2 .contact {
+                padding: 25px 0px;
+                margin-left: 25px;
+            }
+
+                .resume .profile2 .contact div {
+                    display: inline;
+                }
+                .resume .profile2 .contact i {
+                    color: #fcfcfc;
+                    background: #5679af;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 20px;
+                    line-height: 40px;
+                    border-radius: 12%;
+                    text-align: center;
+                    vertical-align: middle;
+                    margin-right: 8px;
+                    transition-duration: 0.3s;
+                }
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+
+    .resume .profile2 .aboutme {
+        font-size: 1.1rem;
+        line-height: 30px;
+        margin-left: 25px;
+    }
+    .resume .func {
+        clear: both;
+        width: 90%;
+        margin: auto;
+        padding-top: 45px;
+    }
+        .resume .func .Exrerience, .resume .func .edu {
+            float: left;
+            padding-right: 15px;
+        }
+        .resume .func .Exrerience{
+            float: left;
+            padding-right: 15px;
+        }
+    .edu small {
+        display: block;
+        opacity: 0.7;
+    }
+    .resume .func .Exrerience small, .resume .func .edu small {
+        display: block;
+        opacity: 0.7;
+    }
+        .resume .func h3 i {
+            color: #fcfcfc;
+            background: #78909c;
+            width: 42px;
+            height: 42px;
+            font-size: 20px;
+            line-height: 42px;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 8px;
+            transition-duration: 0.3s;
+        }
+
+    .resume .skills-prog {
+        width: 70%;
+        margin: auto;
+    }
+        .resume .skills-prog h3 i {
+            color: #fcfcfc;
+            background: #78909c;
+            width: 42px;
+            height: 42px;
+            font-size: 20px;
+            line-height: 42px;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 8px;
+            transition-duration: 0.3s;
+        }
+
+
+    .progress {
+        display: -ms-flexbox;
+        display: flex;
+        height: 1rem;
+        overflow: hidden;
+        font-size: 0.75rem;
+        background-color: #e9ecef;
+        border-radius: 0.25rem;
+        margin-bottom:0px;
+    }
+    .resume .skills-prog li .progress {
+        width: 400px;
+        float: right;
+        margin-top: 6px;
+    }
+
+    .progress-bar-striped {
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+        background-size: 1rem 1rem;
+    }
+    .progress-bar {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        background-color: #007bff;
+        transition: width 0.6s ease;
+    }
+
+    .bg-success {
+        background-color: #28a745 !important;
+    }
+    .bg-danger {
+        background-color: #dc3545 !important;
+    }
+    :root {
+        --blue: #007bff;
+        --indigo: #6610f2;
+        --purple: #6f42c1;
+        --pink: #e83e8c;
+        --red: #dc3545;
+        --orange: #fd7e14;
+        --yellow: #ffc107;
+        --green: #28a745;
+        --teal: #20c997;
+        --cyan: #17a2b8;
+        --white: #fff;
+        --gray: #6c757d;
+        --gray-dark: #343a40;
+        --primary: #007bff;
+        --secondary: #6c757d;
+        --success: #28a745;
+        --info: #17a2b8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --breakpoint-xs: 0;
+        --breakpoint-sm: 576px;
+        --breakpoint-md: 768px;
+        --breakpoint-lg: 992px;
+        --breakpoint-xl: 1200px;
+        --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    .resume .myawards {
+        width: 87%;
+        margin: auto;
+        margin-top: 45px;
+    }
+    h3, .h3 {
+        font-size: 1.75rem;
+    }
+    .resume .myawards h3 i {
+        color: #fcfcfc;
+        background: #78909c;
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+        line-height: 42px;
+        border-radius: 50%;
+        text-align: center;
+        vertical-align: middle;
+        margin-right: 8px;
+        transition-duration: 0.3s;
+    }
+    .resume .myawards .award-base {
+        text-align: center;
+    }
+    .resume .myawards .card {
+        display: inline-block;
+    }
+    .card-img-top {
+        width: 100%;
+        border-top-left-radius: calc(0.25rem - 1px);
+        border-top-right-radius: calc(0.25rem - 1px);
+    }
+    .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem;
+    }
+    .card-text:last-child {
+        margin-bottom: 0;
+    }
+    img {
+        vertical-align: middle;
+        border-style: none;
+    }
+    #timeline {
+        width: 100%;
+        margin: 30px auto;
+        position: relative;
+        padding: 0 10px;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -ms-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+        #timeline:before {
+            content: "";
+            width: 3px;
+            height: 100%;
+            background: #78947e;
+            left: 690px;
+            top: 0;
+            position: absolute;
+        }
+        #timeline .timeline-item {
+            position: relative;
+            clear: both;
+        }
+            #timeline .timeline-item .timeline-icon {
+                background: #78947e;
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: 0;
+                left: 680px;
+                overflow: hidden;
+                margin-left: -23px;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                border-radius: 50%;
+            }
+                #timeline .timeline-item .timeline-icon i {
+                    color: #fcfcfc;
+                    width: 52px;
+                    height: 52px;
+                    font-size: 32px;
+                    line-height: 48px;
+                    border-radius: 50%;
+                    text-align: center;
+                    vertical-align: middle;
+                    margin-right: 8px;
+                    transition-duration: 0.3s;
+                }
+    .fa-windows:before {
+        content: "\f17a";
+    }
+    #timeline .timeline-item .timeline-content {
+        margin-top: 30px;
+        width: 640px;
+        background: #fff;
+        padding: 20px;
+        -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+        -ms-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+        #timeline .timeline-item .timeline-content:before {
+            content: '';
+            position: absolute;
+            left: 640px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            border-left: 7px solid #78947e;
+        }
+        #timeline .timeline-item .timeline-content h5 {
+            padding: 15px;
+            background: #78947e;
+            color: #fff;
+            margin: -20px -20px 0 -20px;
+            font-weight: 300;
+            -webkit-border-radius: 3px 3px 0 0;
+            -moz-border-radius: 3px 3px 0 0;
+            -ms-border-radius: 3px 3px 0 0;
+            border-radius: 3px 3px 0 0;
+        }
+    h5, .h5 {
+        font-size: 1.25rem;
+    }
+</style>
+
+
+<body>
+    <div class="resume">
+
+        <div class="profile">
+            <div class="photo"><img src="pic/545454.jpg"></div>
+            <div class="info">
+                <h4 class="myname">林志原<br>LIN,CHIH-YUAN</h4><small class="max-education">東海大學　資訊工程研究所</small>
+            </div>
+        </div>
+        <div class="profile2">
+            <div class="contact">
+
+                <div class="call"><i class="fa fa-mobile" aria-hidden="true"></i><span>(+886)919-001-773</span></div>
+                <div class="address"><i class="fa fa-map-marker"></i><span>Changhua, Taiwan</span></div>
+                <div class="email"><i class="fa fa-envelope"></i><span>wsx30818@gmail.com</span></div>
+                <div></div>
+            </div>
+            <div class="aboutme">
+                <h3>關於我</h3>
+                從高中開始自學程式設計，對於有趣的事物可以廢寢忘食，在學期間多次製作出跟校務有關的程式，研究所階段也接觸了雲端計算和人工智慧，服役期間也幫單位製作了一些小工具，退伍後在研究自製大型遙控飛機，所學甚廣但不精，目前在成為軟體開發工程師的道路上努力，如果你對我有興趣，歡迎跟我聯絡。
+            </div>
+        </div>
+
+        <div class="func">
+            <div class="edu">
+                <h3><i class="fa fa-graduation-cap"></i>學歷</h3>
+                <ul>
+                    <li><span>東海大學　資訊工程研究所</span><small>Sep 2015 - Sep 2017</small></li>
+                    <li><span>v修平科技大學　資訊網路技術系</span><small>Sep 2011 - Jun 2015</small></li>
+                </ul>
+            </div>
+            <div class="Exrerience">
+                <h3><i class="fa fa-briefcase"></i>經歷</h3>
+                <ul>
+                    <li><span>元緒科技股份有限公司 產學合作</span><small>Aug 2016 - Sep 2017</small></li>
+                    <li><span>科技部專題計畫(MOST-104-2221-E-029-009) 專案負責</span><small>Sep 2015 - Sep 2017</small></li>
+                    <li><span>高等演算法助教</span><small>Sep 2015 - Jun 2016</small></li>
+                    <li><span>科技部專題計畫(MOST-104-2218-E-006-016) 參與製作</span><small>Oct 2015 - Dec 2015</small></li>
+                    <li><span>實驗室助理</span><small>Sep 2014 - Jun 2015</small></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="skills-prog">
+            <h3><i class="fa fa-terminal" aria-hidden="true"></i>專業領域</h3>
+            <ul>
+                <li>
+                    <span>JAVA</span>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width:88%;" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                </li>
+                <li>
+                    <span>C#/VB .NET</span>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 96%;" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>JavaScript/jQuery</span>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>MySQL/SQLite</span>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>NodeJS</span>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>python</span>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>HTML/CSS</span>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>arduino</span>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>C/C++</span>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="myawards">
+            <h3><i class="fa fa-trophy"></i>獲獎</h3>
+            <div class="award-base">
+                <div class="card" style="width: 55%;">
+                    <img class="card-img-top" src="pic/award0.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">獲獎專案內容：android App<br>使用技術：JAVA,android SDK,SQLite</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 45%;">
+                    <img class="card-img-top" src="pic/award1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">獲獎專案內容：雲端計算<br>使用技術：JAVA,hadoop,MySQL,jsoup<br>　</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 45%;">
+                    <img class="card-img-top" src="pic/award2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">獲獎專案內容：人工智慧<br>使用技術：python,GPU,tensorflow,<br>javascript </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="myawards">
+            <h3><i class="fa fa-pencil-square-o" aria-hidden="true"></i>作品</h3>
+            <div class="container">
+                <div id="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa fa-windows" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>座位編排系統</h5>
+                            <p>
+                                專案內容：windows App<br>使用技術：VB.NET,apache poi
+                            </p>
+                            <img src="pic/works1-2.jpg" style="width:50%">
+                            <img src="pic/works1-1.jpg" style="width:100%">
+                            <p>
+                                made in 2011~2013
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa fa-windows" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>宿舍網路流量監控</h5>
+                            <p>
+                                專案內容：windows App<br>使用技術：C#.NET,jsoup
+                            </p>
+                            <img src="pic/works2-1.jpg" style="width:40%">
+                            <img src="pic/works2-2.jpg" style="width:40%">
+                            <img src="pic/works2-3.jpg" style="width:40%">
+                            <p>
+                                made in 2013
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa fa-windows" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>課表編排程式</h5>
+                            <p>
+                                專案內容：windows App<br>使用技術：C#.NET,jsoup,apache poi
+                            </p>
+                            <img src="pic/works3-1.jpg" style="width:100%">
+                            <p>
+                                made in 2013~2014
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa fa-gamepad" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>下樓2048</h5>
+                            <p>專案內容：java game<br>使用技術：java</p>
+                            <img src="pic/works4-1.jpg" style="width:65%">
+                            <p>
+                                made in 2013
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa fa-apple" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>產學合作案 建築施工管理e化</h5>
+                            <p>專案內容：Mobile phone App<br>使用技術：phonegap,JavaScript,SQLite,JSP,MySQL,apache tomcat</p>
+                            <img src="pic/works5-1.jpg" style="width:30%">
+                            <img src="pic/works5-2.jpg" style="width:30%">
+                            <img src="pic/works5-3.jpg" style="width:30%">
+                            <p>
+                                made in 2016~2017
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa fa-edge" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>總務處行政業務電子化</h5>
+                            <p>專案內容：web service<br>使用技術：NodeJS,JavaScript,Express,npm,MySQL</p>
+                            <img src="pic/works6-1.jpg" style="width:50%">
+                            <img src="pic/works6-2.jpg" style="width:100%">
+                            <img src="pic/works6-3.jpg" style="width:100%">
+                            <p>
+                                made in 2018
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fa fa-fighter-jet" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h5>自製遙控飛機</h5>
+                            <p>專案內容：自製遙控器&amp;飛機<br>使用技術：ardunio</p>
+                            <img src="pic/works7-1.jpg" style="width:100%">
+                            <p>
+                                made in 2018
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
